@@ -4,9 +4,10 @@ class Prueba extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
-		#carga de librerias
-		#carga de helpers
+
+		%this->load->model('m_congreso');
 	}
+
 
 	public function index()
 	{
@@ -24,9 +25,17 @@ class Prueba extends CI_Controller {
 	public function altaEventos()
 	{
 
-		echo "<pre>";
+
+		$nom= $this->input->post('nom');
+		$fecha=$this->input->post('fecha');
+		$lugar=$this->input->post('lugar');
+		$hora=$this->input->post('hora');
+		$costo=$this->input->post('costo');
+
+		$fecha =
+		/*echo "<pre>";
 			print_r($_POST);
-		echo "/<pre>";
+		echo "/<pre>";*/
 	}
 
 }
