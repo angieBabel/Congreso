@@ -5,4 +5,9 @@ class M_congreso extends CI_Model{
 		parent::__construct();
 	}
 
+	function AgregaCongreso($datos){
+
+		$this->db->insert('eventos',$datos);
+
+	}
 }

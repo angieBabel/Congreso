@@ -25,14 +25,13 @@ class Prueba extends CI_Controller {
 	public function altaEventos()
 	{
 
+		$datos['nombre']= $this->input->post('nom');
+		$datos['fecha']=$this->input->post('fecha');
+		$datos['lugar']=$this->input->post('lugar');
+		$datos['hora']=$this->input->post('hora');
+		$datos['costo']=$this->input->post('costo');
 
-		$nom= $this->input->post('nom');
-		$fecha=$this->input->post('fecha');
-		$lugar=$this->input->post('lugar');
-		$hora=$this->input->post('hora');
-		$costo=$this->input->post('costo');
-
-		$fecha =
+		$this->m_congreso->AgregaCongreso();
 		/*echo "<pre>";
 			print_r($_POST);
 		echo "/<pre>";*/
