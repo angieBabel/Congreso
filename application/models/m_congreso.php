@@ -7,7 +7,7 @@ class M_congreso extends CI_Model{
 
 	function AgregaCongreso($datos){
 
-		$this->db->insert('eventos',$datos);
+		$this->db->insert('evento',$datos);
 
 	}
 }

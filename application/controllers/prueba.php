@@ -5,16 +5,9 @@ class Prueba extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 
-		%this->load->model('m_congreso');
+		$this->load->model('m_congreso');
 	}
 
-
-	public function index()
-	{
-		$datos['nombre']="Juan Perez";
-
-		$this->load->view('inicio',$datos);
-	}
 
 	public function eventos()
 	{
@@ -31,10 +24,17 @@ class Prueba extends CI_Controller {
 		$datos['hora']=$this->input->post('hora');
 		$datos['costo']=$this->input->post('costo');
 
-		$this->m_congreso->AgregaCongreso();
+		$this->m_congreso->AgregaCongreso($datos);
+		$this->eventos();
 		/*echo "<pre>";
 			print_r($_POST);
 		echo "/<pre>";*/
+	}
+
+		public function ponentes()
+	{
+		
+		$this->load->view('ponentes');
 	}
 
 }

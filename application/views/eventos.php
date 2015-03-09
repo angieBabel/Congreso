@@ -7,7 +7,7 @@ include "/Secciones/cabeza.php";
 	    	<form action="index.php/prueba/altaEventos" method="POST">
 	    		<div class="form-group">
 	    			<label for="nom">Nombre:</label>
-	    			<input type="nom" type= "Text" class="form-control" placeholder="Nombre del Evento">
+	    			<input name="nom" type= "Text" class="form-control" placeholder="Nombre del Evento">
 	    			
 	    		</div>
 
