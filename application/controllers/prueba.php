@@ -37,4 +37,19 @@ class Prueba extends CI_Controller {
 		$this->load->view('ponentes');
 	}
 
+	public function altaPonentes()
+	{
+
+		$datos['nombre']= $this->input->post('nom');
+		$datos['correo']=$this->input->post('correo');
+		$datos['telefono']=$this->input->post('tel');
+		$datos['domicilio']=$this->input->post('dom');
+
+		$this->m_congreso->AgregaPonente($datos);
+		$this->ponentes();
+		/*echo "<pre>";
+			print_r($_POST);
+		echo "/<pre>";*/
+	}
+
 }

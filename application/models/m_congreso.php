@@ -10,4 +10,10 @@ class M_congreso extends CI_Model{
 		$this->db->insert('evento',$datos);
 
 	}
+
+	function AgregaPonente($datos){
+
+		$this->db->insert('ponente',$datos);
+
+	}
 }
