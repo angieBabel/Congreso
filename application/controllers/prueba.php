@@ -39,14 +39,28 @@ class Prueba extends CI_Controller {
 
 	public function altaPonentes()
 	{
+		$this->form_validation->set_rules('nombre','Nombre','required');
+		if($this->form_validation->run()==FALSE){
+			$this->load->view('ponentes');
+		}
+		else
+		{
 
-		$datos['nombre']= $this->input->post('nom');
-		$datos['correo']=$this->input->post('correo');
-		$datos['telefono']=$this->input->post('tel');
-		$datos['domicilio']=$this->input->post('dom');
+			$datos['nombre']= $this->input->post('nom');
+			$datos['correo']=$this->input->post('correo');
+			$datos['telefono']=$this->input->post('tel');
+			$datos['domicilio']=$this->input->post('dom');
 
-		$this->m_congreso->AgregaPonente($datos);
-		$this->ponentes();
+			$this->m_congreso->AgregaPonente($datos);
+			$datos['mensaje']='Alta de ponente exitosa';
+			$datos['ruta']='index.php/prueba/ponentes';
+			$this->load->view('ponentes');
+		}
+
+
+		
+		/*$this->ponentes();
+		$this->load->view->('ponentes');
 		/*echo "<pre>";
 			print_r($_POST);
 		echo "/<pre>";*/
