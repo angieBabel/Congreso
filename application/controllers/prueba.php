@@ -39,7 +39,9 @@ class Prueba extends CI_Controller {
 
 	public function altaPonentes()
 	{
+		$this->form_validation->set_message('required','El campo %s es requerido');
 		$this->form_validation->set_rules('nombre','Nombre','required');
+		$this->form_validation->set_rules('correo','Correo','required|valid_email');
 		if($this->form_validation->run()==FALSE){
 			$this->load->view('ponentes');
 		}
@@ -54,6 +56,7 @@ class Prueba extends CI_Controller {
 			$this->m_congreso->AgregaPonente($datos);
 			$datos['mensaje']='Alta de ponente exitosa';
 			$datos['ruta']='index.php/prueba/ponentes';
+			//$this->load->view('mensaje',$datos);
 			$this->load->view('ponentes');
 		}
 
