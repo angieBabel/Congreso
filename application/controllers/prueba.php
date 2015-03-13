@@ -37,11 +37,22 @@ class Prueba extends CI_Controller {
 		$this->load->view('ponentes');
 	}
 
+	public function showPonentes()
+	{
+		$ponentes=$this->m_congreso->getPonentes();
+		$this->load->view('tabla_ponentes',array("datos"=>$ponentes));
+		
+
+	}
+
 	public function altaPonentes()
 	{
-		$this->form_validation->set_message('required','El campo %s es requerido');
-		$this->form_validation->set_rules('nombre','Nombre','required');
+		$this->form_validation->set_message('required','El campo <b>%s</b> es requerido');
+		$this->form_validation->set_message('valid_email','No es un correo valido');
+
+		$this->form_validation->set_rules('nom','Nombre','required');
 		$this->form_validation->set_rules('correo','Correo','required|valid_email');
+
 		if($this->form_validation->run()==FALSE){
 			$this->load->view('ponentes');
 		}
@@ -54,10 +65,12 @@ class Prueba extends CI_Controller {
 			$datos['domicilio']=$this->input->post('dom');
 
 			$this->m_congreso->AgregaPonente($datos);
-			$datos['mensaje']='Alta de ponente exitosa';
+			/*datos['mensaje']='Alta de ponente exitosa';
 			$datos['ruta']='index.php/prueba/ponentes';
-			//$this->load->view('mensaje',$datos);
-			$this->load->view('ponentes');
+			$this->load->view('mensaje',$datos);*/
+
+			$this->showPonentes();
+			//$this->load->view('ponentes');
 		}
 
 
