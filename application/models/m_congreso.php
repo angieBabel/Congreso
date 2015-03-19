@@ -20,4 +20,21 @@ class M_congreso extends CI_Model{
 		$query=$this->db->get('ponente');
 		return $query->result_array();
 	}
+
+	function borraPonente($id)
+	{
+		$this->db->where('idponente',$id);
+		$this->db->delete('ponente');
+	}
+
+	function getPonente($id){
+		$this->db->where('idponente',$id);
+		$query=$this->db->get('ponente');
+		return $query->result_array();
+	}
+
+	function actPonente($datos,$id){
+		$this->db->where('idponente',$id);
+		$this->db->update('ponente',$datos);
+	}
 }
