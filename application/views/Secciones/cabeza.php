@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +17,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+<script>
+    webshims.setOptions('forms-ext', {types: 'date'});
+webshims.polyfill('forms forms-ext');
+</script>
+
   </head>
   <body>
   <!--menu principal-->
@@ -36,9 +43,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="#"><a href="index.php/prueba/eventos">Evento</a></li>
-            <li class="#"><a href="index.php/prueba/showPonentes">Ponentes</a></li>
-            <li class="#"><a href="#">Conferencias <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
+            <li class="#"><a href="index.php/prueba/showConferencia">Conferencias <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Taller</a></li>
+            <li><a href="index.php/prueba/showPonentes">Ponente</a></li>
+            <li><a href="#">Instructores</a></li>
+            <li><a href="#">Participantes</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">

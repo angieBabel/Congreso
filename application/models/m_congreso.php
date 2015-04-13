@@ -37,4 +37,25 @@ class M_congreso extends CI_Model{
 		$this->db->where('idponente',$id);
 		$this->db->update('ponente',$datos);
 	}
+
+	function getEvento(){
+		$this->db->order_by('idevento','desc');
+		$this->db->limit(1);
+		$query=$this->db->get('evento');
+
+
+		return $query->result_array();
+
+	}
+
+	function guardaConferencia($datos){
+		$this->db->insert('conferencia',$datos);
+	}
+
+	function getConferencias(){
+		//$this->db->where('idconferencia',$id);
+		$query=$this->db->get('conferencia');
+		return $query->result_array();
+	}
+
 }

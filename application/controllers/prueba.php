@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Prueba extends CI_Controller {
-	
+
 	function __construct(){
 		parent::__construct();
 
@@ -11,7 +11,7 @@ class Prueba extends CI_Controller {
 
 	public function eventos()
 	{
-		
+
 		$this->load->view('eventos');
 	}
 
@@ -33,7 +33,7 @@ class Prueba extends CI_Controller {
 
 		public function ponentes()
 	{
-		
+
 		$this->load->view('ponentes');
 	}
 
@@ -41,7 +41,7 @@ class Prueba extends CI_Controller {
 	{
 		$ponentes=$this->m_congreso->getPonentes();
 		$this->load->view('tabla_ponentes',array("datos"=>$ponentes));
-		
+
 
 	}
 
@@ -99,7 +99,43 @@ class Prueba extends CI_Controller {
 		$datos['domicilio']=$this->input->post('dom');
 
 		$this->m_congreso->actPonente($datos,$id);
-		$this->showPonentes();		
+		$this->showPonentes();
+	}
+
+	function agregarConferencia(){
+		$ponentes=$this->m_congreso->getPonentes();
+		$evento=$this->m_congreso->getEvento();
+		$datos['ponentes']=$ponentes;
+		$datos['evento']=$evento[0];
+/*		print_r($ponentes);
+		print_r($evento);*/
+
+		$this->load->view('conferencia',$datos);
+	}
+
+	function grabaConferencia(){
+
+		$datos['nombre']= $this->input->post('nom');
+		$datos['lugar']=$this->input->post('lugar');
+		$datos['hora']=$this->input->post('hora');
+		$datos['ponente_idponente']=$this->input->post('ponente');
+		$datos['evento_idevento']=$this->input->post('idevento');
+		//$datos['fecha']=$this->input->post('fecha');
+		$datos['fecha']=date('Y-m-d',strtotime($datos['fecha']));
+
+		$this->m_congreso->guardaConferencia($datos);
+
+
+		$this->showConferencia();
+	}
+
+	function showConferencia(){
+		$conferencias=$this->m_congreso->getConferencias();
+		foreach ($conferencias as $key => $value) {
+			/*$idPonente=$conferencia['ponente_idponente'];
+			$conferencia['ponente']=$this->m_congreso->getNomPonente*/
+		}
+		$this->load->view('tabla_congreso',array("datos"=>$conferencias));
 	}
 
 }
