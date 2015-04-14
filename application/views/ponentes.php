@@ -1,8 +1,11 @@
-<?php 
+<?php
 include "/Secciones/cabeza.php";
  ?>
     <div class="container">
     	<div class="row">
+    	<div class="col-md-12">
+    		<h1>Alta Ponentes</h1>
+    	</div>
 			<form action="index.php/prueba/altaPonentes" method="POST">
 	    		<div class="form-group col-md-4">
 	    			<label for="nom">Nombre:</label>
@@ -10,7 +13,7 @@ include "/Secciones/cabeza.php";
 	    			<div class="error">
 	    				<?php echo form_error('nom');?>
 	    			</div>
-	    			
+
 	    		</div>
 
 	    		<div class="form-group col-md-4">
@@ -26,12 +29,15 @@ include "/Secciones/cabeza.php";
 	    			<input type="text" name="tel" class="form-control" placeholder="Telefono"  value="<?php if (isSet($_POST['tel']) ){ echo $_POST['tel']; } ?>">
 	    		</div>
 
-	    		<div class="form-group">
+	    		<div class="form-group col-md-12">
 	    			<label for="dom">Domicilio</label>
-	    			<textarea type="text" name="dom" class="form-control" placeholder="Datos de Domicilio"></textarea> 
+	    			<textarea type="text" name="dom" class="form-control" placeholder="Datos de Domicilio"></textarea>
 	    		</div>
-	    		<button type="submint" class="btn btn-default">Enviar</button>
-	    	</form>    		
+	    		<div class="col-md-1">
+	    			<button type="submint" class="btn btn-default">Enviar</button>
+	    		</div>
+
+	    	</form>
     	</div>
     </div>
 

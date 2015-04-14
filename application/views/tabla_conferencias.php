@@ -13,7 +13,7 @@ include "/Secciones/cabeza.php";
           <th></th>
         </tr>
         <?php
-          if(count($datos) == 0 ){echo "No hay ponenetes registrados";}
+          if(count($datos) == 0 ){echo "No hay coferencias registradas";}
           else {
             foreach ($datos as $value) {
 
@@ -32,7 +32,7 @@ include "/Secciones/cabeza.php";
         }
          ?>
       </table>
-      <a href="index.php/prueba/conferencia" class='btn btn-default btn-lg' role="button"> Agregar Ponente</a>
+      <a href="index.php/prueba/agregarConferencia" class='btn btn-default btn-lg' role="button"> Agregar Conferencia</a>
     </div>
 
 <?php

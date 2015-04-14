@@ -58,4 +58,10 @@ class M_congreso extends CI_Model{
 		return $query->result_array();
 	}
 
+	function getTaller(){
+		//$this->db->where('idconferencia',$id);
+		$query=$this->db->get('taller');
+		return $query->result_array();
+	}
+
 }

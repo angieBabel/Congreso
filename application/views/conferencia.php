@@ -3,7 +3,9 @@ include "/Secciones/cabeza.php";
  ?>
     <div class="container">
     	<div class="row">
-	    	<h1 >Alta evento</h1>
+	    	<div class="col-md-12">
+	    		<h1 >Alta evento</h1>
+	    	</div>
 	    	<form action="index.php/prueba/grabaConferencia" method="POST">
 	    		<div class="form-group col-md-6">
 	    			<label for="nom">Nombre:</label>
@@ -49,7 +51,11 @@ include "/Secciones/cabeza.php";
 	    			<label for="costo">Costo</label>
 	    			<input type="text" name="costo" class="form-control" placeholder="9999.99">
 	    		</div>
-	    		<button type="button" class="btn btn-default pull-right" onclick="valida_conferencia()">Enviar</button>
+	    		<div class="col-md-11"></div>
+	    		<div class="col-md-1">
+	    			<button type="button" class="btn btn-default pull-right" onclick="valida_conferencia()">Enviar</button>
+	    		</div>
+
 	    	</form>
 				<?php
 					if(isSet($mensaje)){

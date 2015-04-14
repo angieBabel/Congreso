@@ -44,10 +44,10 @@ webshims.polyfill('forms forms-ext');
           <ul class="nav navbar-nav">
             <li class="#"><a href="index.php/prueba/eventos">Evento</a></li>
             <li class="#"><a href="index.php/prueba/showConferencia">Conferencias <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Taller</a></li>
+            <li><a href="index.php/prueba/showTaller">Taller</a></li>
             <li><a href="index.php/prueba/showPonentes">Ponente</a></li>
-            <li><a href="#">Instructores</a></li>
-            <li><a href="#">Participantes</a></li>
+            <li><a href="index.php/prueba/showInstructor">Instructores</a></li>
+            <li><a href="index.php/prueba/showParticipante">Participantes</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">

@@ -135,7 +135,19 @@ class Prueba extends CI_Controller {
 			/*$idPonente=$conferencia['ponente_idponente'];
 			$conferencia['ponente']=$this->m_congreso->getNomPonente*/
 		}
-		$this->load->view('tabla_congreso',array("datos"=>$conferencias));
+		$this->load->view('tabla_conferencias',array("datos"=>$conferencias));
+	}
+
+	function showTaller(){
+		$this->load->view('taller');
+	}
+
+	function showParticipante(){
+		$this->load->view('participante');
+	}
+
+	function showInstructor(){
+		$this->load->view('instructor');
 	}
 
 }
