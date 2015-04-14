@@ -10,12 +10,6 @@ include "/Secciones/cabeza.php";
 	    		<div class="form-group col-md-6">
 	    			<label for="nom">Nombre:</label>
 	    			<input name="nom" type= "Text" class="form-control" placeholder="Nombre del Evento">
-
-	    		</div>
-
-	    		<div class="form-group col-md-6">
-	    			<label for="fecha">Fecha:</label>
-	    			<input name="fecha" type="date" class="form-control" placeholder="Fecha">
 	    		</div>
 
 	    		<div class="form-group col-md-6">
@@ -36,6 +30,11 @@ include "/Secciones/cabeza.php";
 	    			</select>
 	    		</div>
 
+	    		<div class="form-group col-md-6">
+	    			<label for="fecha">Fecha:</label>
+	    			<input name="fecha" type="date" class="form-control" placeholder="Fecha">
+	    		</div>
+
 	    		<div class="form-group col-md-12">
 	    			<label for="evento">Evento</label>
 	    			<input type="text" name="evento" class="form-control" value="<?php echo $evento['nombre'] ?>" readonly>
@@ -47,10 +46,6 @@ include "/Secciones/cabeza.php";
 	    			<input type="time" name="hora" class="form-control" placeholder="hh:mm">
 	    		</div>
 
-	    		<div class="form-group col-md-6">
-	    			<label for="costo">Costo</label>
-	    			<input type="text" name="costo" class="form-control" placeholder="9999.99">
-	    		</div>
 	    		<div class="col-md-11"></div>
 	    		<div class="col-md-1">
 	    			<button type="button" class="btn btn-default pull-right" onclick="valida_conferencia()">Enviar</button>
